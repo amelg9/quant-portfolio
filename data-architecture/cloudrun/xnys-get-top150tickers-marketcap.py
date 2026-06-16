@@ -176,7 +176,7 @@ def process_exchange(client, publisher, topic_path, exchange):
 
 
 def main(request):
-    logging.info("🚀 Lancement du filtrage top tickers Polygon + publication Pub/Sub")
+    logging.info("Lancement du filtrage top tickers Polygon + publication Pub/Sub")
     client = RESTClient(POLYGON_API_KEY)
     try:
         publisher, topic_path = init_publisher()
@@ -188,8 +188,8 @@ def main(request):
         df = process_exchange(client, publisher, topic_path, exchange)
         logging.info(f"{exchange}: top 5 ->\n{df.head(5).to_string(index=False)}")
 
-    logging.info("✅ Traitement terminé.")
-    return "✅ Traitement terminé", 200
+    logging.info("Traitement terminé.")
+    return "Traitement terminé", 200
 
 
 #if __name__ == "__main__":
